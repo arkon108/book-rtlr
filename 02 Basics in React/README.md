@@ -147,3 +147,29 @@ As opposed to this:
     type="button"
 >
 ```
+
+
+## Interactions with Forms and Events
+
+Event handling functions receive an `event` object. It's `target` property contains `value` of element which triggered the event.
+
+
+## Controlled Components
+
+The "uncontrolled components" are, for example, form elements like `input`, `select`, `textarea`, when we don't explicitly declare their value. When the value is stated, they become "controlled components".
+
+More about [different controlled components](https://github.com/the-road-to-learn-react/react-controlled-components-examples).
+
+
+## Component Declarations
+
+A good rule of thumb in deciding whether to use functional stateless components or class components is to go with the functional stateless, if there's no need for local state or lifecycle methods. Usually the components are created as functional stateless components until there's need for state or lifecycle methods, then they get refactored to ES6 class components.
+
+### Functional Stateless Components
+Declared as functions, they take `props` as parameter and return JSX. They don't have internal state, so no calls `this.setState()` or access to `this.state`. Additionally, they have no lifecycle methods.
+
+### ES5 Class Components
+Extend from `React.Component` which gives them internal state, plus all the lifecycle methods. 
+
+### React.createClass
+Even though it's still used in ES5 React applications, it's been deprecated.
