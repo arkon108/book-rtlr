@@ -2,7 +2,7 @@
 
 Covers the best practices of structuring files and folders, and also covers testing & debugging practices.
 
-Test excercises were done in [../03 Getting Real with APIs/excercise/src/App.test.js]
+Test excercises were done in [App.test.js](../03 Getting Real with APIs/excercise/src/App.test.js)
 
 ## Snapshot testing with Jest
 
