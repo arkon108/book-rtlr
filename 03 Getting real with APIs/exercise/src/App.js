@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import PropTypes from 'prop-types';
 import './App.css';
 
 
@@ -122,8 +123,6 @@ class App extends Component {
             More
           </Button>
         </div>    
-        <hr />
-        <small>React version {React.version}</small>
       </div>
     );
   }
@@ -146,6 +145,12 @@ const Search = ({ value, onChange, onSubmit, children }) =>
     <button type="submit">{children}</button>
   </form>
 
+Search.propTypes = {
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  children: PropTypes.node
+};
 // refactored to functional stateless component below
 /* 
 class Table extends Component {
@@ -198,6 +203,11 @@ const Table = ({list, onDismiss}) =>
     )}
     </div>
 
+Table.propTypes = {
+  list: PropTypes.array.isRequired,
+  onDismiss: PropTypes.func.isRequired
+};
+
 //refactored to functional stateless component below
 /*
 class Buttonn extends Component {
@@ -222,7 +232,7 @@ class Buttonn extends Component {
 */
 
 
-const Button = ({onClick, className = '', children}) => 
+const Button = ({onClick, className, children}) => 
   <button
     onClick={onClick}
     className={className}
@@ -231,6 +241,20 @@ const Button = ({onClick, className = '', children}) =>
     {children}
   </button>
 
+Button.defaultProps = {
+  className: ''
+};
+
+Button.propTypes = {
+  onClick: PropTypes.func,
+  className: PropTypes.string,
+  children: PropTypes.node.isRequired
+};
 
 
 export default App;
+export { 
+  Button,
+  Search,
+  Table
+}
